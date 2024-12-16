@@ -1,8 +1,13 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_name = "gautamraj8044/fine-tuned-distilgpt2"  # Replace with your model's repository name
-model = AutoModelForCausalLM.from_pretrained(model_name)
-tokenizer = AutoTokenizer.from_pretrained(model_name)
+model_path = './fine-tuned-distilgpt2'  
+
+model = AutoModelForCausalLM.from_pretrained(model_path)
+tokenizer = AutoTokenizer.from_pretrained(model_path)
+
+tokenizer.pad_token = tokenizer.eos_token
+model.config.pad_token_id = tokenizer.eos_token_id  
+
 input_text = "Give three tips for staying healthy."
 
 inputs = tokenizer(input_text, return_tensors="pt", padding="longest", truncation=True, max_length=512)
