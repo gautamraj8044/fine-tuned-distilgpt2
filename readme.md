@@ -2,7 +2,7 @@
 
 # Fine-Tuned DistilGPT-2
 
-This repository contains code for fine-tuning and testing a `DistilGPT-2` model using the Alpaca dataset. The two key scripts provided in this repository are:
+This repository contains code for fine-tuning and testing a `DistilGPT-2` model using the Alpaca dataset. The two key scripts provided in this repository are
 
 1. **fine_tuning.py** – Script for fine-tuning the `DistilGPT-2` model on the Alpaca dataset.
 2. **Testing.py** – Script for testing the fine-tuned model and generating text based on given prompts.
